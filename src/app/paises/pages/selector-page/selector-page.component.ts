@@ -32,8 +32,12 @@ export class SelectorPageComponent implements OnInit {
   ngOnInit(): void {
 
     this.regiones = this.paisesService.regiones;
+    this.onRegionChanged();
+    this.onPaisChanged();
+  }
 
-    // this.miFormulario.get('region')?.valueChanges
+  onRegionChanged(): void {
+     // this.miFormulario.get('region')?.valueChanges
     //   .subscribe(region => {
     //     console.log(region);
 
@@ -59,7 +63,9 @@ export class SelectorPageComponent implements OnInit {
         this.paises = paises;
         this.cargando = false;
       });
+  }
 
+  onPaisChanged(): void {
     this.miFormulario.get('pais')?.valueChanges
       .pipe(
         tap(
